@@ -1,13 +1,13 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sistema de filtrado de agua para laboratorios} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,18 +17,18 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Ing. Agustín Miguel Grosso} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Ing. Juan Antonio Tántera}
+\pertenenciaDirector{UTN FRBA. Galileo Technologies S.A.} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+\codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Marcelo Ricci}
+\empresaCliente{Ingeniería Clínica}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +38,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{20 de octubre de 2022}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{8 de diciembre de 2022} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{a confirmar}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -69,11 +69,11 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
+1      & Redacción del acta de constitución del proyecto \newline
+		  Identificación y análisis de los interesados \newline
+		  Redacción de la descripción técnica-conceptual \newline
+		  Definición del propósito y alcance del proyecto & 2 de noviembre de 2022 \\ \hline
+
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -110,98 +110,128 @@ Se adjunta a esta acta la planificación inicial.
 \end{table}
 
 
-
+\pagebreak
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
+Aquellas tareas que deben ser realizadas en ambientes protegidos de la contaminación natural como lo son las salas limpias y los laboratorios, deben tener garantizado un estado continuo y controlado de muchos parámetros clave ambientales y de procesos. En las tareas de bioquímica, más específicamente el análisis de muestras de sangre, es necesaria la garantía de provisión continua de agua tipo I y/o II.
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+\begin{table}[ht]
+\begin{tabularx}{\linewidth}{@{}|l|X|X|X|l|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Parámetro          								&Tipo I 	&Tipo II 	&Tipo III  	&Tipo IV 	\\ \hline
+Conductividad eléctrica máx.. [uS/cm @ 25°C)    &0,056 		&1,0 		&4,0 		&5,0		\\ \hline
+Resistividad eléctrica mín. (Mohm-cm @ 25 °C)	&18,2 		&1,0		&0,25 		&0,2		\\ \hline
+PH a 25 °C										&-			&- 			&-			&5,0 - 8,0	\\ \hline
+TOC máx. (ug/L)									&10			&50 		&200		&Sin límite	\\ \hline
+Sodio máx. (ug/L)								&1			&5 			&10			&50			\\ \hline
+Sílice máx. (ug/L)								&3			&3 			&500		&Sin límite	\\ \hline
+Cloro máx. (ug/L)								&1			&5 			&10			&50			\\ \hline
+\end{tabularx}
+\caption{Especificaciones sobre los tipos de agua según ASTM D1193-91 (American Society for Testing and Materials).}
+\label{tab:aguaTipoII}
+\end{table}
 
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+Los equipos disponibles en el mercado a precios alcanzables y capaces de mantener una provisión de agua para laboratorios son dispositivos que contienen módulos para filtrado (carbón activado, filtros de partículas, cartuchos de ósmosis inversa) de gran tamaño para garantizar una vida útil funcional aceptable antes del reemplazo recomendado. También, ciertos parámetros que pueden verse alterados por la finalización del correcto funcionamiento de dichos módulos, en muchos casos, deben ser monitoreados y medidos de forma manual con cierta regularidad para detectar la necesidad de mantenimiento y/o cambio.
 
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
+El actual desarrollo, además de cumplir con la pauta principal que es la erogación del agua definida, incorporará el control continuo del estado del sistema:
 \begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
+	\item Control de vida útil de módulos.
+	\item Protección del sistema mediante medición de presiones.
+	\item Detección e informe de fallas de cada etapa.
+	\item Resguardo de información para análisis posteriores.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+La principal ventaja de un control continuo y reportado es la posibilidad de realizar mantenimiento preventivo evitando que ciertos desvíos decanten en fallas críticas y posibilitar el uso de módulos más pequeños y, por lo tanto, con un equipo más pequeño y cómodo.
 
-%\vspace{25px}
+
+Como segunda parte del proyecto (no incluida en este plan) se encuentra el objetivo de incorporar los equipos a una red de IoT (Internet of Things) para el monitoreo de la red de equipos por parte del proveedor, posibilitando el servicio técnico preventivo.
+
+Se muestra, a continuación, partes definidas del sistema.
+
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
-\label{fig:diagBloques}
+\includegraphics[width=.7\textwidth]{./Figuras/Microcontrolador y sus perifericos.png}
+\caption{Microcontrolador y sus periféricos.}
+\label{fig:microcontroladorConexiones}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.7\textwidth]{./Figuras/Filtros del sistema.png}
+\caption{Filtros del sistema.}
+\label{fig:filtrosSistema}
+\end{figure}
 
+\vspace{25px}
+
+El núcleo lógico del sistema será un módulo ESP32 con FreeRTOS como sistema operativo. El microcontrolador será el encargado de leer las diferentes variables, analizarlas y actuar, como así también, deberá realizar tareas de almacenamiento de información y de comunicación con el usuario (teclado y display).
+Mediante la lectura de periféricos se analizarán variables para diferentes funciones:
+\begin{itemize}
+	\item Presión
+	\begin{itemize}
+		\item Detección de obstrucciones.
+		\item Detección de fluido a la entrada.
+		\item Análisis del estado de de filtros.
+	\end{itemize}
+	\item Caudal	
+	\begin{itemize}
+		\item Detección de obstrucciones.
+		\item Medición de agua erogada.
+		\item Análisis del estado de de filtros.
+	\end{itemize}
+	\item Conductividad
+	\begin{itemize}
+		\item Medición de estado del agua filtrada.
+	\end{itemize}
+	\item Peso
+	\begin{itemize}
+		\item Medición del estado de llenado del reservorio.
+	\end{itemize}
+\end{itemize}
+
+Los salidas del sistema sobre los cuales se actuará serán bombas, electro-válvulas y una lámpara UV (eliminación de agentes biológicos) para diferentes etapas:
+\begin{itemize}
+	\item Ingreso de agua al equipo.
+	\item Eliminación del descarte de las ósmosis.
+	\item Llenado de reservorio
+	\item Re-circulación para el filtrado
+	\item Erogación de agua.
+\end{itemize}
+
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/Esquema de equipo.jpeg}
+\caption{Esquema del equipo de filtrado.}
+\label{fig:equipoEsquemaFisico}
+\end{figure}
+
+\vspace{25px}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
-
+\begin{consigna}{black} 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Rol           & Nombre y Apellido 		& Organización 		& Puesto 			\\ \hline
+Cliente       & \clientename 			&\empclientename 	& Gerente 			\\ \hline
+Responsable   & \authorname 			& FIUBA        		& Alumno 			\\ \hline
+Orientador    & \supname 				& \pertesupname 	& Director 			\\ \hline
+Equipo        & José Alejandro Tántera 	& GA.MA ITALY 		& Desarrollador de hardware    	\\ \hline
+Usuario final & Laboratorios de análisis clínicos           &       -       	&      -  	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
 \end{consigna}
 
 
@@ -209,23 +239,20 @@ Por ejemplo:
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+\begin{consigna}{black}
+El propósito de este proyecto es garantizar la provisión de agua filtrada a laboratorios de análisis clínicos para, principalmente, la tarea de disolución de sangre. El sistema deberá ser capaz de suministrar agua a usuarios, mediante la solicitud a través de la interfaz correspondiente, y a un segundo sistema que se encontrará conectado a una salida dedicada.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+A su vez, tiene el propósito de ser el primer proyecto del equipo de desarrollos electrónicos que se formará entre las personas que aquí participan como director, colaborador y alumno.
 \end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}{black}
+Se encuentra dentro del alcance del proyecto el desarrollo del firmware que implementará la lógica del sistema, el sensado de variables externas y la actuación sobre los dispositivos de salida. Como así también el prototipo de hardware del sistema embebido.
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+No se encuentra comprendido, dentro del alcance del trabajo, el diseño y la construcción de la estructura del equipo, el conexionado entre cada elemento y la selección de los filtros de partículas, lámpara UV y demás dispositivos externos.
+El proyecto no incluye pruebas y habilitaciones en institutos o entes de regulación.
 
 \end{consigna}
 
@@ -233,15 +260,19 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+\begin{consigna}{black}
+Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Todos los módulos que comprenden el proyecto pueden ser adquiridos.
+	\begin{itemize}
+		\item Microcontrolador ESP32.
+		\item Extensor de GPIO MCP23008 o MCP23017.
+		\item Celda de carga HX711.
+	\end{itemize}
+	\item Los desarrolladores (alumno y colaborador) cuentan con la disponibilidad de 12 horas por semana.
+	\item Se cuenta con la documentación necesaria sobre los dispositivos utilizados.
+	\item El equipo estará armado para realizar la prueba de campo.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 \end{consigna}
 
 \section{6. Requerimientos}
