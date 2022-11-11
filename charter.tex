@@ -70,10 +70,13 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Redacción del acta de constitución del proyecto \newline
-		  Identificación y análisis de los interesados \newline
-		  Redacción de la descripción técnica-conceptual \newline
-		  Definición del propósito y alcance del proyecto & 2 de noviembre de 2022 \\ \hline
-
+		 Identificación y análisis de los interesados \newline
+		 Redacción de la descripción técnica-conceptual \newline
+		 Definición del propósito y alcance del proyecto & 2 de noviembre de 2022 \\ \hline
+2      & Definición de los requerimientos \newline
+		 Definición de las historias de usuario (\textit{Product backlog}) \newline
+		 Declaración de los entregables del proyecto  \newline
+		 Desglose de tareas & 11 de noviembre de 2022 \\ \hline
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -92,7 +95,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -115,26 +118,27 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-Aquellas tareas que deben ser realizadas en ambientes protegidos de la contaminación natural como lo son las salas limpias y los laboratorios, deben tener garantizado un estado continuo y controlado de muchos parámetros clave ambientales y de procesos. En las tareas de bioquímica, más específicamente el análisis de muestras de sangre, es necesaria la garantía de provisión continua de agua tipo I y/o II.
+Aquellas tareas que deben ser realizadas en ambientes protegidos de la contaminación natural como lo son las salas limpias y los laboratorios, deben tener garantizado un estado continuo y controlado de muchos parámetros clave ambientales y de procesos. En las tareas de bioquímica, más específicamente el análisis de muestras de sangre, es necesaria la garantía de provisión continua de agua tipo I y/o II cuyas características se detallan en el cuadro \ref{tab:aguaTipoII}.
 
 \begin{table}[ht]
 \begin{tabularx}{\linewidth}{@{}|l|X|X|X|l|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-Parámetro          								&Tipo I 	&Tipo II 	&Tipo III  	&Tipo IV 	\\ \hline
-Conductividad eléctrica máx.. [uS/cm @ 25°C)    &0,056 		&1,0 		&4,0 		&5,0		\\ \hline
-Resistividad eléctrica mín. (Mohm-cm @ 25 °C)	&18,2 		&1,0		&0,25 		&0,2		\\ \hline
-PH a 25 °C										&-			&- 			&-			&5,0 - 8,0	\\ \hline
-TOC máx. (ug/L)									&10			&50 		&200		&Sin límite	\\ \hline
-Sodio máx. (ug/L)								&1			&5 			&10			&50			\\ \hline
-Sílice máx. (ug/L)								&3			&3 			&500		&Sin límite	\\ \hline
-Cloro máx. (ug/L)								&1			&5 			&10			&50			\\ \hline
+\rowcolor[HTML]{C0C0C0}
+Parámetro          												&Tipo I 	&Tipo II 	&Tipo III  	&Tipo IV 	\\ \hline
+Conductividad eléctrica máx. [$\mu$S/cm @ 25 \textcelsius)    	&0,056 		&1,0 		&4,0 		&5,0		\\ \hline
+Resistividad eléctrica mín. (M$\Omega$ cm @ 25 \textcelsius)	&18,2 		&1,0		&0,25 		&0,2		\\ \hline
+PH a 25 \textcelsius											&-			&- 			&-			&5,0 - 8,0	\\ \hline
+TOC máx. ($\mu$g/l)												&10			&50 		&200		&Sin límite	\\ \hline
+Sodio máx. ($\mu$g/l)											&1			&5 			&10			&50			\\ \hline
+Sílice máx. ($\mu$g/l)											&3			&3 			&500		&Sin límite	\\ \hline
+Cloro máx. ($\mu$g/l)											&1			&5 			&10			&50			\\ \hline
 \end{tabularx}
-\caption{Especificaciones sobre los tipos de agua según ASTM D1193-91 (American Society for Testing and Materials).}
+
+\caption{\centering Especificaciones sobre los tipos de agua según ASTM D1193-91 (\textit{American Society for Testing and Materials}).}
 \label{tab:aguaTipoII}
 \end{table}
 
-Los equipos disponibles en el mercado a precios alcanzables y capaces de mantener una provisión de agua para laboratorios son dispositivos que contienen módulos para filtrado (carbón activado, filtros de partículas, cartuchos de ósmosis inversa) de gran tamaño para garantizar una vida útil funcional aceptable antes del reemplazo recomendado. También, ciertos parámetros que pueden verse alterados por la finalización del correcto funcionamiento de dichos módulos, en muchos casos, deben ser monitoreados y medidos de forma manual con cierta regularidad para detectar la necesidad de mantenimiento y/o cambio.
+Los equipos analizados disponibles en el mercado son dispositivos que contienen módulos para filtrado (carbón activado, filtros de partículas, cartuchos de ósmosis inversa) de gran tamaño para garantizar una vida útil funcional aceptable antes del reemplazo recomendado. También, ciertos parámetros que pueden verse alterados por la finalización del correcto funcionamiento de dichos módulos, en muchos casos, deben ser monitoreados y medidos de forma manual con cierta regularidad para detectar la necesidad de mantenimiento y/o cambio.
 
 El actual desarrollo, además de cumplir con la pauta principal que es la erogación del agua definida, incorporará el control continuo del estado del sistema:
 \begin{itemize}
@@ -144,13 +148,13 @@ El actual desarrollo, además de cumplir con la pauta principal que es la erogac
 	\item Resguardo de información para análisis posteriores.
 \end{itemize}
 
-La principal ventaja de un control continuo y reportado es la posibilidad de realizar mantenimiento preventivo evitando que ciertos desvíos decanten en fallas críticas y posibilitar el uso de módulos más pequeños y, por lo tanto, con un equipo más pequeño y cómodo.
+La principal ventaja de un control continuo y reportado es la posibilidad de realizar mantenimientos preventivos. La disponibilidad de información sobre el estado del sistema permite evitar que ciertos desvíos decanten en fallas críticas. 
+También, las alertas sobre la vida útil de los distintos módulos de filtrado permiten adelantarse al recambio de estos módulos y vuelve más eficiente el esquema de mantenimiento. Este esquema de análisis y reportes posibilita el uso de módulos menor tamaño y, por lo tanto, el equipo se vuelve más pequeño y cómodo para ser manipulado.
 
 
-Como segunda parte del proyecto (no incluida en este plan) se encuentra el objetivo de incorporar los equipos a una red de IoT (Internet of Things) para el monitoreo de la red de equipos por parte del proveedor, posibilitando el servicio técnico preventivo.
+Como segunda parte del proyecto (no incluida en este plan) se encuentra el objetivo de incorporar los equipos a una red de IoT (\textit{Internet of Things}) para el monitoreo del universo de equipos por parte del proveedor y permitiéndole elaborar esquemas de servicio técnico preventivo.
 
-Se muestra, a continuación, partes definidas del sistema.
-
+Se muestra, a continuación, un diagrama en bloques de la solución propuesta:
 
 \begin{figure}[htpb]
 \centering 
@@ -161,29 +165,20 @@ Se muestra, a continuación, partes definidas del sistema.
 
 \vspace{25px}
 
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.7\textwidth]{./Figuras/Filtros del sistema.png}
-\caption{Filtros del sistema.}
-\label{fig:filtrosSistema}
-\end{figure}
-
-\vspace{25px}
-
-El núcleo lógico del sistema será un módulo ESP32 con FreeRTOS como sistema operativo. El microcontrolador será el encargado de leer las diferentes variables, analizarlas y actuar, como así también, deberá realizar tareas de almacenamiento de información y de comunicación con el usuario (teclado y display).
+El núcleo lógico del sistema será un módulo ESP32 con FreeRTOS (\textit{Free Real Time Operating System}) como sistema operativo. El microcontrolador será el encargado de leer las diferentes variables, analizarlas y actuar, como así también, deberá realizar tareas de almacenamiento de información y de comunicación con el usuario (teclado y display).
 Mediante la lectura de periféricos se analizarán variables para diferentes funciones:
 \begin{itemize}
 	\item Presión
 	\begin{itemize}
 		\item Detección de obstrucciones.
 		\item Detección de fluido a la entrada.
-		\item Análisis del estado de de filtros.
+		\item Análisis del estado de filtros.
 	\end{itemize}
 	\item Caudal	
 	\begin{itemize}
 		\item Detección de obstrucciones.
 		\item Medición de agua erogada.
-		\item Análisis del estado de de filtros.
+		\item Análisis del estado de filtros.
 	\end{itemize}
 	\item Conductividad
 	\begin{itemize}
@@ -199,25 +194,25 @@ Los salidas del sistema sobre los cuales se actuará serán bombas, electro-vál
 \begin{itemize}
 	\item Ingreso de agua al equipo.
 	\item Eliminación del descarte de las ósmosis.
-	\item Llenado de reservorio
-	\item Re-circulación para el filtrado
+	\item Llenado de reservorio.
+	\item Re-circulación para el filtrado.
 	\item Erogación de agua.
 \end{itemize}
 
 
+\vspace{25px}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=1\textwidth]{./Figuras/Esquema de equipo.jpeg}
+\includegraphics[width=.8\textwidth]{./Figuras/Esquema de equipo_vert.png}
 \caption{Esquema del equipo de filtrado.}
 \label{fig:equipoEsquemaFisico}
 \end{figure}
 
 \vspace{25px}
-
+\newpage
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{black} 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
@@ -232,151 +227,212 @@ Equipo        & José Alejandro Tántera 	& GA.MA ITALY 		& Desarrollador de har
 Usuario final & Laboratorios de análisis clínicos           &       -       	&      -  	\\ \hline
 \end{tabularx}
 \end{table}
-\end{consigna}
-
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{black}
 El propósito de este proyecto es garantizar la provisión de agua filtrada a laboratorios de análisis clínicos para, principalmente, la tarea de disolución de sangre. El sistema deberá ser capaz de suministrar agua a usuarios, mediante la solicitud a través de la interfaz correspondiente, y a un segundo sistema que se encontrará conectado a una salida dedicada.
 
 A su vez, tiene el propósito de ser el primer proyecto del equipo de desarrollos electrónicos que se formará entre las personas que aquí participan como director, colaborador y alumno.
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{black}
-Se encuentra dentro del alcance del proyecto el desarrollo del firmware que implementará la lógica del sistema, el sensado de variables externas y la actuación sobre los dispositivos de salida. Como así también el prototipo de hardware del sistema embebido.
+Se encuentra dentro del alcance del proyecto el desarrollo del firmware que implementará la lógica del sistema, el sensado de variables externas y la actuación sobre los dispositivos de salida. Como así también el prototipo de hardware del sistema embebido. 
+El sistema embebido resultante del presente desarrollo será incorporado al equipo para realizar las pruebas de campo junto a las conexiones, los filtros, el reservorio, etc.
 
-No se encuentra comprendido, dentro del alcance del trabajo, el diseño y la construcción de la estructura del equipo, el conexionado entre cada elemento y la selección de los filtros de partículas, lámpara UV y demás dispositivos externos.
-El proyecto no incluye pruebas y habilitaciones en institutos o entes de regulación.
-
-\end{consigna}
+No se encuentra comprendido dentro del alcance del trabajo el diseño y la construcción de la estructura del equipo, el conexionado entre cada elemento y la selección de los filtros de partículas, lámpara UV y demás dispositivos externos.
+El proyecto no incluye pruebas ni habilitaciones en institutos o entes de regulación.
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{black}
-Para el desarrollo del presente proyecto se supone que:
+Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 \begin{itemize}
+	\item El cliente no interrumpirá el proyecto.
 	\item Todos los módulos que comprenden el proyecto pueden ser adquiridos.
 	\begin{itemize}
 		\item Microcontrolador ESP32.
-		\item Extensor de GPIO MCP23008 o MCP23017.
-		\item Celda de carga HX711.
+		\item Expansor de GPIO (MCP23008 o MCP23017).
+		\item Celda de carga y módulo HX711.
 	\end{itemize}
+	\item La fabricación del hardware no se verá demorada por factores externos al proyecto y al equipo de desarrollo.
 	\item Los desarrolladores (alumno y colaborador) cuentan con la disponibilidad de 12 horas por semana.
 	\item Se cuenta con la documentación necesaria sobre los dispositivos utilizados.
-	\item El equipo estará armado para realizar la prueba de campo.
+	\item La estructura y el conexionado del equipo estarán listos para realizar la prueba de campo.
 \end{itemize}
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
-
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item Deben garantizarse las propiedades de agua tipo II a la salida.
+			\item El usuario debe poder solicitar la erogación.
+			\item El sistema debe proveer agua a un segundo equipo automáticamente.
+			\item Debe detectarse cuándo el segundo equipo debe ser provisto.
+			\item El ingreso de agua al sistema, el llenado del reservorio y el filtrado deben ser automáticos.
+			\item Deben ser detectadas obstrucciones en filtros.
+			\item Debe analizarse la vida útil de los filtros.
+			\item Debe almacenarse información para posteriores análisis.
 		\end{enumerate}
-	\item Requerimientos de documentación
+	\item Requerimientos de metodología de trabajo
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Control de versiones mediante GIT.
+			\item Aplicación de reglas de programación MISRA C.
+			\item Esquemáticos del hardware desarrollados en Altium.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+\begin{itemize}
+\item Historia de usuario 1
+\\El usuario requiere de un sistema que utilice la red de agua corriente como fuente de alimentación.
+	\begin{itemize}
+		\item Dificultad: baja (1)
+		\\Implica el análisis de la presión a la entrada del equipo.
+		\item Complejidad: baja (1)
+		\\Análisis de un solo sensor de presión.
+		\item Riesgo: medio (3)
+		\\Sin un correcto funcionamiento el sistema se desabastece.
+	\end{itemize}
+\textit{Story point:} 5
+\item Historia de usuario 2
+\\El usuario requiere de la disponibilidad constante de agua mediante un reservorio con contenido controlado.
+	\begin{itemize}
+		\item Dificultad: media (3)
+		\\Implica el análisis de sensores de presión, caudalímetros y celdas de carga. También, se debe gestionar la activación de bombas y electro-válvulas.
+		\item Complejidad: media (3)
+		\\La lógica debe analizar y comandar los periféricos para abastecer y mantener el contenido del tanque.
+		\item Riesgo: medio (3)
+		\\Sin un correcto funcionamiento el sistema se desabastece o el reservorio podría desbordarse.
+	\end{itemize}
+\textit{Story point:} 9
+\item  Historia de usuario 3
+\\El usuario debe disponer de agua tipo II (ver tabla \ref{tab:aguaTipoII}).
+	\begin{itemize}
+		\item Dificultad: alta (5)
+		\\Medición de variables clave. 
+		\item Complejidad: : media (3)
+		\\Control del lazo de filtrado.
+		\item Riesgo: alto (5)
+		\\Es el bloque que debe garantizar la calidad del agua filtrada. Afecta a los procesos que requieren de agua tipo II.
+	\end{itemize}
+\textit{Story point:} 13
+\item  Historia de usuario 4
+\\El usuario requiere la posibilidad de obtener agua a demanda.
+	\begin{itemize}
+		\item Dificultad: : media (3)
+		\\Dispensación de agua y control del caudal.
+		\item Complejidad: media (3)
+		\\Control del lazo de erogación y medición del agua erogada.
+		\item Riesgo: bajo (1)
+		\\El usuario puede corregir algún error en la cantidad de agua entregada.
+	\end{itemize}
+\textit{Story point:} 7
+\item  Historia de usuario 5
+\\El usuario precisa que un segundo equipo sea provisto de agua por el sistema.
+	\begin{itemize}
+		\item Dificultad: baja (1)
+		\\Dispensación de agua sin control exacto de caudal.
+		\item Complejidad: media (3)
+		\\Detección de necesidad de erogación a través de una rutina de medición de caudal. Fin del proceso cuando el segundo sistema cierre su válvula de entrada.
+		\item Riesgo: alto (5)
+		\\El equipo provisto de agua puede quedar desabastecido y afectar los procesos dependientes de este.
+	\end{itemize}
+\textit{Story point:} 9
+\end{itemize}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
 	\item Manual de uso
+	\item Firmware
 	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
 	\item Informe final
-	\item etc...
 \end{itemize}
-
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+\item Gestión del Proyecto 
+	\begin{enumerate}	
+	\item Definición de los requerimientos en conjunto con el cliente (8 h)
+	\item Definición inicial de la solución de hardware y software (16 h)
+	\item Planeamiento inicial (8 h)
+	\item Presentación de la propuesta al cliente (6 h)
+	\item Ajustes de requerimientos (8 h)
+	\item Documentación del alcance y planeamiento del proyecto. (24 h)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Investigación
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Periféricos (32 h)
+		\begin{itemize}
+			\item Celda de carga
+			\item Caudalímetro
+			\item Sensor de presión
+			\item Conductímetro
+			\item Memoria SD
+			\item Display
+		\end{itemize}
+	\item Microcontrolador (16 h)
+	\item Componentes adicionales (32 h)
+		\begin{itemize}
+			\item Expansor de GPIO
+			\item Transistores
+			\item Driver para transistores
+			\item Otros
+		\end{itemize}
+	\item Fabricantes (4 h)
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Desarrollo de hardware
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Diseño de diagramas esquemáticos (40 h)
+	\item Diseño de PCB (32 h)
+	\end{enumerate}
+\item Desarrollo de software
+	\begin{enumerate}
+	\item \textit{Device Drivers}
+		\begin{itemize}
+			\item Celda de carga HX711 (16 h)
+			\item Bomba (6 h)
+			\item Electro-válvula (4 h)
+			\item Lámpara UV (4 h)
+			\item Caudalímetro (16 h)
+			\item Sensor de presión (8 h)
+			\item Conductímetro (8 h)
+			\item Módulo SD (16 h)
+			\item Display (32 h)
+			\item Teclado (16 h)
+		\end{itemize}
+	\item Diseño de la MEF (Máquina de Estados Finitos) (8 h)
+	\item Programación de tareas de \textit{FreeRTOS} (24 h)
+	\item Programación de la MEF (24 h)
+	\end{enumerate}
+\item Prueba y verificación
+	\begin{enumerate}
+		\item Planificación (16 h)
+		\item \textit{Device Drivers} (24 h)
+		\item Lógica del sistema (8 h)
+		\item Sistema integrado (40 h)
+		\item Modificaciones (40 h)
+	\end{enumerate}
+\item Documentación
+	\begin{enumerate}
+		\item Elaboración del manual de uso (24 h)
+		\item Elaboración del informe final (60 h)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
+Cantidad total de horas: 620 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
