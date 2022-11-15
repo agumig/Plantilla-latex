@@ -149,12 +149,12 @@ El actual desarrollo, además de cumplir con la pauta principal que es la erogac
 \end{itemize}
 
 La principal ventaja de un control continuo y reportado es la posibilidad de realizar mantenimientos preventivos. La disponibilidad de información sobre el estado del sistema permite evitar que ciertos desvíos decanten en fallas críticas. 
-También, las alertas sobre la vida útil de los distintos módulos de filtrado permiten adelantarse al recambio de estos módulos y vuelve más eficiente el esquema de mantenimiento. Este esquema de análisis y reportes posibilita el uso de módulos menor tamaño y, por lo tanto, el equipo se vuelve más pequeño y cómodo para ser manipulado.
+También, las alertas sobre la vida útil de los distintos módulos de filtrado permiten adelantarse al recambio de estos módulos y vuelve más eficiente el esquema de mantenimiento. Este esquema de análisis y reportes posibilita el uso de módulos de menor tamaño y, por lo tanto, el equipo se vuelve más pequeño y cómodo para ser manipulado.
 
 
 Como segunda parte del proyecto (no incluida en este plan) se encuentra el objetivo de incorporar los equipos a una red de IoT (\textit{Internet of Things}) para el monitoreo del universo de equipos por parte del proveedor y permitiéndole elaborar esquemas de servicio técnico preventivo.
 
-Se muestra, a continuación, un diagrama en bloques de la solución propuesta:
+Se muestra, a continuación, un diagrama en bloques de la solución propuesta (figura \ref{fig:microcontroladorConexiones}):
 
 \begin{figure}[htpb]
 \centering 
@@ -190,7 +190,7 @@ Mediante la lectura de periféricos se analizarán variables para diferentes fun
 	\end{itemize}
 \end{itemize}
 
-Los salidas del sistema sobre los cuales se actuará serán bombas, electro-válvulas y una lámpara UV (eliminación de agentes biológicos) para diferentes etapas:
+Las salidas del sistema sobre los cuales se actuará serán bombas, electro-válvulas y una lámpara UV (eliminación de agentes biológicos) para diferentes etapas:
 \begin{itemize}
 	\item Ingreso de agua al equipo.
 	\item Eliminación del descarte de las ósmosis.
@@ -199,6 +199,7 @@ Los salidas del sistema sobre los cuales se actuará serán bombas, electro-vál
 	\item Erogación de agua.
 \end{itemize}
 
+El sistema completo, conformado por los bloques de la figura \ref{fig:microcontroladorConexiones} y el conexionado con los demás módulos, se detalla en la figura \ref{fig:equipoEsquemaFisico}.
 
 \vspace{25px}
 \begin{figure}[htpb]
@@ -284,10 +285,24 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 			\item Aplicación de reglas de programación MISRA C.
 			\item Esquemáticos del hardware desarrollados en Altium.
 		\end{enumerate}
+	\item Requerimientos de documentación
+		\begin{enumerate}
+			\item Debe generarse y entregarse un manual de usuario para el uso del equipo y su alcance funcional.
+			\item Debe generarse y entregarse documentación de carácter técnico.
+			\begin{itemize}
+				\item Valores que deben ser entregados por el equipo (tabla \ref{tab:aguaTipoII}).
+				\item Máquina de estados del sistema.
+				\item Formato de los datos almacenados en memoria SD.
+				\item Módulos que componen el sistema (marca, serie).
+			\end{itemize}
+		\end{enumerate}
 \end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+
+Cada historia de usuario descripta en esta sección partirá desde requerimientos que cumplen necesidades del clientes (quién fabricará los equipos) y de los usuarios finales (personal de laboratorios principalmente).\\
+El grado de importancia, dificultad y complejidad de cada ítem será finalmente representado con valor propios de la serie de fibonacci.
 
 \begin{itemize}
 \item Historia de usuario 1
@@ -300,8 +315,9 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\item Riesgo: medio (3)
 		\\Sin un correcto funcionamiento el sistema se desabastece.
 	\end{itemize}
-\textit{Story point:} 5
-\item Historia de usuario 2
+\textit{Story point:} 5\\
+\textit{Valor de fibonacci:} 5
+\item Valor de fistoria de usuario 2
 \\El usuario requiere de la disponibilidad constante de agua mediante un reservorio con contenido controlado.
 	\begin{itemize}
 		\item Dificultad: media (3)
@@ -311,7 +327,8 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\item Riesgo: medio (3)
 		\\Sin un correcto funcionamiento el sistema se desabastece o el reservorio podría desbordarse.
 	\end{itemize}
-\textit{Story point:} 9
+\textit{Story point:} 9\\
+\textit{Valor de fibonacci:} 8
 \item  Historia de usuario 3
 \\El usuario debe disponer de agua tipo II (ver tabla \ref{tab:aguaTipoII}).
 	\begin{itemize}
@@ -322,7 +339,8 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\item Riesgo: alto (5)
 		\\Es el bloque que debe garantizar la calidad del agua filtrada. Afecta a los procesos que requieren de agua tipo II.
 	\end{itemize}
-\textit{Story point:} 13
+\textit{Story point:} 13\\
+\textit{Valor de fibonacci:} 13
 \item  Historia de usuario 4
 \\El usuario requiere la posibilidad de obtener agua a demanda.
 	\begin{itemize}
@@ -333,7 +351,8 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\item Riesgo: bajo (1)
 		\\El usuario puede corregir algún error en la cantidad de agua entregada.
 	\end{itemize}
-\textit{Story point:} 7
+\textit{Story point:} 7\\
+\textit{Valor de fibonacci:} 8
 \item  Historia de usuario 5
 \\El usuario precisa que un segundo equipo sea provisto de agua por el sistema.
 	\begin{itemize}
@@ -344,7 +363,21 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\item Riesgo: alto (5)
 		\\El equipo provisto de agua puede quedar desabastecido y afectar los procesos dependientes de este.
 	\end{itemize}
-\textit{Story point:} 9
+\textit{Story point:} 9\\
+\textit{Valor de fibonacci:} 8
+\item  Historia de usuario 6
+\\El cliente solicita que sean almacenados datos de forma periódica sobre el estado del sistema para disponer de información al momento de analizar y realizar un servicio técnico.
+	\begin{itemize}
+		\item Dificultad: baja (1)
+		\\Escritura de tarjeta de memoria SD.
+		\item Complejidad: media (3)
+		\\Requiere detectar datos clave y vincular los distintos módulos de software con el encargado del almacenamiento de información.
+		\item Riesgo: bajo (1)
+		\\No afecta directamente al equipo y a su funcionamiento en régimen permanente.
+	\end{itemize}
+\textit{Story point:} 5\\
+\textit{Valor de fibonacci:} 5
+
 \end{itemize}
 
 \section{8. Entregables principales del proyecto}
@@ -353,9 +386,10 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
 	\item Firmware
 	\item Diagrama de circuitos esquemáticos
+	\item Prototipo (firmware y hardware) funcional.
+	\item Manual de uso
 	\item Informe final
 \end{itemize}
 
@@ -370,7 +404,7 @@ Los entregables del proyecto son:
 	\item Planeamiento inicial (8 h)
 	\item Presentación de la propuesta al cliente (6 h)
 	\item Ajustes de requerimientos (8 h)
-	\item Documentación del alcance y planeamiento del proyecto. (24 h)
+	\item Documentación del alcance y planeamiento del proyecto (24 h)
 	\end{enumerate}
 \item Investigación
 	\begin{enumerate}
@@ -397,6 +431,7 @@ Los entregables del proyecto son:
 	\begin{enumerate}
 	\item Diseño de diagramas esquemáticos (40 h)
 	\item Diseño de PCB (32 h)
+	\item Fabricación de PCB (64 h)
 	\end{enumerate}
 \item Desarrollo de software
 	\begin{enumerate}
@@ -432,32 +467,26 @@ Los entregables del proyecto son:
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 620 h.
+Cantidad total de horas: 684 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
+Se detalla, en la figura \ref{fig:AoN}, los bloques correspondientes al diagrama de \textit{Activity On Node}. Se utilizan los tiempos en horas de las tareas ya definidos en el desglose del trabajo (sección \ref{sec:wbs}).\\
+Se estima que la fabricación del PCB llevará un mes y medio. A un supuesto ya definido de 12 h semanales, se proyecta, entonces, al bloque \textit{"Fabricación de HW"} con un equivalente de 64 h, es decir, 6 semanas. A esta rama que contiene dicho bloque con tiempo variable dependiente del fabricante, se la etiqueta como camino semicrítico.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=1\textwidth]{./Figuras/Activity On Node.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
+\vspace{25px}
 
+%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
+%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
