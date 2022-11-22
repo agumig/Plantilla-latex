@@ -38,9 +38,9 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{20 de octubre de 2022}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaINICIO{20 de octubre de 2022}			%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{8 de diciembre de 2022} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{a confirmar}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{16 de octubre de 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -77,6 +77,14 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 		 Definición de las historias de usuario (\textit{Product backlog}) \newline
 		 Declaración de los entregables del proyecto  \newline
 		 Desglose de tareas & 11 de noviembre de 2022 \\ \hline
+
+3      & Nuevo requerimientos sobre documentación \newline
+		 Nueva historia de usuario sobre el cliente  \newline
+		 Se agrega el tiempo de fabricación de hardware en el desglose de tareas \newline
+		 Diagrama de Activity On Node \newline
+		 Diagrama de gantt \newline
+		 Presupuesto del proyecto \newline
+		  & 17 de noviembre de 2022\\ \hline
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -95,7 +103,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 684 h de trabajo y \$ 1353600 de costo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -287,7 +295,7 @@ Para el desarrollo en tiempo y forma del presente proyecto se supone que:
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Debe generarse y entregarse un manual de usuario para el uso del equipo y su alcance funcional.
+			\item Debe generarse y entregarse un manual de usuario con información sobre el uso del equipo y su alcance funcional.
 			\item Debe generarse y entregarse documentación de carácter técnico.
 			\begin{itemize}
 				\item Valores que deben ser entregados por el equipo (tabla \ref{tab:aguaTipoII}).
@@ -472,13 +480,13 @@ Cantidad total de horas: 684 h.
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-Se detalla, en la figura \ref{fig:AoN}, los bloques correspondientes al diagrama de \textit{Activity On Node}. Se utilizan los tiempos en horas de las tareas ya definidos en el desglose del trabajo (sección \ref{sec:wbs}).\\
-Se estima que la fabricación del PCB llevará un mes y medio. A un supuesto ya definido de 12 h semanales, se proyecta, entonces, al bloque \textit{"Fabricación de HW"} con un equivalente de 64 h, es decir, 6 semanas. A esta rama que contiene dicho bloque con tiempo variable dependiente del fabricante, se la etiqueta como camino semicrítico.
+Se detallan, en la figura \ref{fig:AoN}, los bloques correspondientes al diagrama de \textit{Activity On Node}. Se utilizan los tiempos en horas de las tareas definidas en el desglose del trabajo (sección \ref{sec:wbs}).\\
+Se estima que la fabricación del PCB llevará un mes y medio. A un supuesto ya definido de 12 h semanales, se proyecta, entonces, al bloque \textit{"Fabricación de HW"} con un equivalente de 64 h, es decir, 6 semanas. A esta rama, que contiene dicho bloque con tiempo variable dependiente del fabricante, se la etiqueta como camino semicrítico.
 
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=1\textwidth]{./Figuras/Activity On Node.png}
-\caption{Diagrama en \textit{Activity on Node}}
+\caption{Diagrama en \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
 
@@ -491,102 +499,85 @@ Se estima que la fabricación del PCB llevará un mes y medio. A un supuesto ya 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
+Se muestra a continuación, en las figuras \ref{fig:WBS_Planner} y \ref{fig:diagGantt}, el desglose de tareas y el diagrama de gantt respectivamente.\\
+Se definió una semana de 6 (seis) días laborables de 2 (dos) horas cada uno para cumplir con la disponibilidad supuesta en la sección \ref{sec:supuestos} de 12 (doce) horas por semana.
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
+\vspace{25px}
 
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
+\includegraphics[width=.8\textwidth]{./Figuras/WBS.png}
+\caption{Estructura de Descomposición del Trabajo (\textit{Work Breakdown Structure}).}
+\label{fig:WBS_Planner}
+\end{figure}
+
+\vspace{25px}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/GANT_sin_detalle.png}
+\caption{Diagrama de gantt del proyecto.}
 \label{fig:diagGantt}
 \end{figure}
 
-\end{landscape}
-
-\end{consigna}
+\vspace{25px}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
+Se presenta, en el cuadro \ref{tab:costos}, el listado de costos principales del proyecto expresados en pesos argentinos. No se tienen en cuenta, en este análisis de costos, los sensores y actuadores que ya han sido provistos por el cliente.
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
 
 \begin{table}[htpb]
-\centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
+\hline
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0} \hline
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  
+ Planificación e investigación & 
+  \multicolumn{1}{c|}{154 h} & 
+  \multicolumn{1}{c|}{\$ 500} &
+  \multicolumn{1}{c|}{\$ 77000} \\ \hline
+  
+ Pruebas y documentación & 
+  \multicolumn{1}{c|}{212 h} & 
+  \multicolumn{1}{c|}{\$ 1000} &
+  \multicolumn{1}{c|}{\$ 212000} \\ \hline
+  
+ Desarrollo de software & 
+  \multicolumn{1}{c|}{91 h} & 
+  \multicolumn{1}{c|}{\$ 3000} &
+  \multicolumn{1}{c|}{\$ 273000} \\ \hline
+  
+ Desarrollo de hardware &
+  \multicolumn{1}{c|}{72 h} &
+  \multicolumn{1}{c|}{\$ 3000} &
+  \multicolumn{1}{c|}{\$ 216000} \\ \hline
+  
+ Kit de desarrollo ESP32 &
+  \multicolumn{1}{c|}{ 2 u} &
+  \multicolumn{1}{c|}{ \$ 4000 } &
+  \multicolumn{1}{c|}{\$ 8000} \\ \hline
+  
+ Fabricación de hardware &
+  \multicolumn{1}{c|}{5 u} &
+  \multicolumn{1}{c|}{\$ 10000} &
+  \multicolumn{1}{c|}{\$ 50000} \\ \hline
+  
+ Otros componentes &
+  \multicolumn{1}{c|}{ 1 } &
+  \multicolumn{1}{c|}{\$ 10000} &
+  \multicolumn{1}{c|}{\$ 10000}  \\ \hline
+   
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 846000} \\ \hline
+  
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -594,53 +585,72 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  
+ 60 \% del costo directo &
+  \multicolumn{1}{c|}{ 1 } &
+  \multicolumn{1}{c|}{\$ 507600} &
+  \multicolumn{1}{c|}{\$ 507600}  \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \$ 507600  \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
+\multicolumn{3}{|c|}{TOTAL} & \$ 1353600   \\ \hline
+\end{tabularx}
+\caption{Definición de costos del proyecto.}
+\label{tab:costos}
 \end{table}
 
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: Errores críticos en el diseño del \textit{hardware}.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad (S): 10\\
+	Provocaría una fabricación de un sistema con fallas y mal funcionamientos, tal vez, insalvables. 
+	\item Probabilidad de ocurrencia (O): 5\\
+	El desarrollador cuenta con los conocimientos necesarios pero la cantidad de periféricos genera la probabilidad de errores.
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: Daños en placa prototipo debido a modificaciones.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 10\\
+	Afectaría pruebas y validaciones de funcionamiento del sistema.
+	\item Ocurrencia (O): 6\\
+	Si se producen cambios de requerimientos del proyecto o modificaciones necesarias de \textit{hardware}, puede dañarse el prototipo al intervenirlo.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: Falta de disponibilidad de componentes.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 8\\
+	Provocaría la imposibilidad de utilizar ciertos módulos diseñados.
+	\item Ocurrencia (O): 8\\
+	Es un riesgo que tiene una ocurrencia frecuente debido a las dificultades que presenta la coyuntura mundial actual.
 \end{itemize}
 
+Riesgo 4: Ausencia de documentación de sensores.
+\begin{itemize}
+	\item Severidad (S): 8\\
+	Alta severidad debido a que afectaría el cumplimiento de requerimientos y al normal trabajo de desarrollo. Se volvería necesario analizar el alcance y el funcionamiento de dichos elementos.
+	\item Ocurrencia (O): 5\\
+	Existe gran cantidad de componentes de fabricación masiva con documentación escasa o inexistente.
+\end{itemize}
+
+Riesgo 5: Incumplimiento de alcances por el microcontrolador seleccionado.
+\begin{itemize}
+	\item Severidad (S): 10\\
+	Implicaría un cambio del \textit{core} del sistema.
+	\item Ocurrencia (O): 4\\
+	Se realiza un análisis para la selección del microcontrolador que disminuye la probabilidad de ocurrencia.
+\end{itemize}
+
+Riesgo 6: Fallas en el funcionamiento de \textit{device drivers}.
+\begin{itemize}
+	\item Severidad (S): 8\\
+		Provocaría la imposibilidad de utilizar ciertos módulos diseñados.
+	\item Ocurrencia (O): 6\\
+	La variedad y cantidad de dispositivos para los cuales es necesario desarrollar un \textit{device driver} aumenta la probabilidad de ocurrencia de fallas.
+\end{itemize}
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 
@@ -649,35 +659,75 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
+
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Errores críticos en el diseño del \textit{hardware} 			& 10   	& 5  	& 50    & 10   	& 2 & 20    \\ \hline
+Daños en placa prototipo debido a modificaciones 				& 10	& 4		& 40	& 4		& 4	& 16 	\\ \hline
+Falta de disponibilidad de componentes 							& 8    	& 8  	& 64    & 6   	& 8 & 48    \\ \hline
+Ausencia de documentación de sensores  							& 8   	& 5  	& 40    & 6  	& 5 & 30    \\ \hline
+Incumplimiento de alcances por el microcontrolador seleccionado & 10  	& 4  	& 40 	& 7   	& 4 & 28    \\ \hline
+Fallas en el funcionamiento de \textit{device drivers}       	& 8		& 6  	& 48    & 6  	& 4	& 24    \\ \hline
+
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 40 puntos.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: Tanto el director como el desarrollador de \textit{software} validarán el diseño del \textit{hardware} mediante la utilización de las hojas de datos correspondientes.
+\begin{itemize}
+	\item Severidad (S): 10 \\
+		Se mantiene la severidad establecida.
+	\item Ocurrencia (O): 2 \\
+	La verificación del diseño por parte de otros ingenieros disminuye considerablemente la probabilidad de ocurrencia.
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 2: Fabricación de 5 (cinco) PCB por cada tirada de producción.
+\begin{itemize}
+	\item Severidad (S): 4\\
+	Se cuenta con placas de respaldo para disminuir la severidad.
+	\item Ocurrencia (O): 4\\
+	Se mantiene la misma probabilidad de ocurrencia debido a que no se analizan y modifican los procesos de \textit{testing}.
+\end{itemize}
 
-\end{consigna}
+Riesgo 3: Búsqueda de opciones a componentes en falta.
+\begin{itemize}
+	\item Severidad (S): 6\\
+	Disminuye el impacto debido a la existencia de opciones para el reemplazo.
+	\item Ocurrencia (O): 8\\
+	La ocurrencia se mantiene dependiendo del contexto de los mercados y regulaciones.
+	
+\end{itemize}
 
+Riesgo 4: Búsqueda de opciones para cambiar los sensores seleccionados por el cliente.
+\begin{itemize}
+	\item Severidad (S): 6\\
+	El impacto sobre el proyecto disminuye para el equipo de desarrollo ya que se le otorga flexibilidad sobre la selección de periféricos.
+	\item Ocurrencia (O): 5\\
+	Permanece la probabilidad de ocurrencia.
+	
+\end{itemize}
+
+Riesgo 5: Programación modular y en capaz para minimizar el tiempo de migración en el caso de cambiar de plataforma.
+\begin{itemize}
+	\item Severidad (S): 7\\
+	La severidad disminuye debido a buenas prácticas que facilitan cambios de \textit{hardware}. 
+	\item Ocurrencia (O): 4\\
+	Se mantiene la probabilidad de ocurrencia.
+\end{itemize}
+
+Riesgo 6: Programación modular y respetando reglas del documento de MISRA C.
+\begin{itemize}
+	\item Severidad (S): 6\\
+	Baja el grado de impacto como consecuencia de la utilización de buenas prácticas de programación.
+	\item Ocurrencia (O): 4\\
+	Se vuelve menos probable la aparición del riesgo debido al ordenamiento sobre el desarrollo.
+	
+\end{itemize}
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
