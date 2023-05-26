@@ -55,10 +55,12 @@
 \newcommand*{\fechaINICIO}[1]{\def\fechaInicioName{#1}}
 \newcommand*{\fechaFINALPlan}[1]{\def\fechaFinalPlanName{#1}}
 \newcommand*{\fechaFINALTrabajo}[1]{\def\fechaFinalName{#1}} 
+\newcommand*{\versionDocument}[1]{\def\versionDocRequerimiento{#1}}
 
 
 
-\def\@title{Plan de proyecto de Trabajo Final} %TODO ver si se puede agregar el campo con el nombre del autor acá
+
+\def\@title{Master Testing Plan} %TODO ver si se puede agregar el campo con el nombre del autor acá
 
 \AtBeginDocument{
   \hypersetup{
@@ -131,7 +133,7 @@
 
 \lhead{\includegraphics[width=3.5cm]{./Figuras/logoFIUBA.pdf}}
 \chead{}
-\rhead{\normalsize \textrm{Plan de proyecto de Trabajo final \\\degreename\\ \authorname}}
+\rhead{\normalsize \textrm{\textbf{\ttitle\\}Master Testing Plan} \textit{ \\\versionDocRequerimiento}}
 \lfoot{ }
 \cfoot{\normalsize Página \thepage \hspace{1px} de \pageref{LastPage}}
 \rfoot{}
@@ -188,15 +190,21 @@
 	
 	\vspace{3cm}
 	{\Huge \textbf{\ttitle}} \\
-	\vspace{4cm}
+	\vspace{1cm}
+	{\Large \textbf{}} \\
+	\vspace{3cm}
 	
 	\flushleft
 	{\normalsize Autor:\\}
 	{\Large \authorname \\}
-	\vspace{1cm}
+	\vspace{5cm}
 	
-	{\normalsize Director:\\}
-	{\Large \supname \hspace{1px} (\pertesupname) \\}
+	\flushleft
+	{\textit{ \\\versionDocRequerimiento} \\}
+	{\normalsize{\fechaInicioName}}
+	
+	%{\normalsize Director:\\}
+	%{\Large \supname \hspace{1px} (\pertesupname) \\}
 	%\vspace{2cm}
 	\ifbool{codirector}{% If the codirector class option has been specified
 	\vspace{10px}
@@ -208,7 +216,7 @@
 	
     \vfill
     \centering
-    \textit{Esta planificación fue realizada en el curso de Gestión de proyectos\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
+  %  \textit{Esta planificación fue realizada en el curso de Gestión de proyectos\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
 		
 	\pagebreak
   }

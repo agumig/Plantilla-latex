@@ -11,36 +11,14 @@
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
-%\posgrado{Carrera de Especialización en Intelegencia Artificial}
-%\posgrado{Maestría en Sistemas Embebidos} 
-%\posgrado{Maestría en Internet de las cosas}
 
+\subject{Ingeniería de Software para Sistemas Embebidos}
+
+\versionDocument{Versión 1}
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 \autor{Ing. Agustín Miguel Grosso} 
 
-% El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Ing. Juan Antonio Tántera}
-\pertenenciaDirector{UTN FRBA. Galileo Technologies S.A.} 
-% FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{}
-
-% Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Marcelo Ricci}
-\empresaCliente{Ingeniería Clínica}
-
-% Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
-\juradoUno{Nombre y Apellido (1)}
-\pertenenciaJurUno{pertenencia (1)} 
-\juradoDos{Nombre y Apellido (2)}
-\pertenenciaJurDos{pertenencia (2)}
-\juradoTres{Nombre y Apellido (3)}
-\pertenenciaJurTres{pertenencia (3)}
- 
-\fechaINICIO{20 de octubre de 2022}			%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{8 de diciembre de 2022} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{16 de octubre de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{25 de mayo de 2023}			%Fecha de inicio de la cursada de ISSE \fechaInicioName
 
 
 \begin{document}
@@ -61,709 +39,330 @@
 \label{sec:registro}
 
 
-\begin{table}[ht]
+\begin{table}[H]
 \label{tab:registro}
 \centering
 \begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Redacción del acta de constitución del proyecto \newline
-		 Identificación y análisis de los interesados \newline
-		 Redacción de la descripción técnica-conceptual \newline
-		 Definición del propósito y alcance del proyecto & 2 de noviembre de 2022 \\ \hline
-2      & Definición de los requerimientos \newline
-		 Definición de las historias de usuario (\textit{Product backlog}) \newline
-		 Declaración de los entregables del proyecto  \newline
-		 Desglose de tareas & 11 de noviembre de 2022 \\ \hline
+A      	& Creación del documento                            &\fechaInicioName 		\\ \hline
 
-3      & Nuevo requerimientos sobre documentación \newline
-		 Nueva historia de usuario sobre el cliente  \newline
-		 Se agrega el tiempo de fabricación de hardware en el desglose de tareas \newline
-		 Diagrama de Activity On Node \newline
-		 Diagrama de gantt \newline
-		 Presupuesto del proyecto \newline
-		  & 17 de noviembre de 2022\\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
 \pagebreak
 
+\section{1. Introducción}
+\label{sec:introduccion}
+\subsection{Propósito}
+\begin{enumerate}
+	\item	El corriente documento desarrolla el plan de testing para el \ttitle.
+	\item 	Se encuentra dirigido a la cátedra de Testing de Software Embebido de la \degreename.
+\end{enumerate}
 
+\section{2. Descripción general}
+\label{sec:descripcion_general}
 
-\section*{Acta de constitución del proyecto}
-\label{sec:acta}
-
-\begin{flushright}
-Buenos Aires, \fechaInicioName
-\end{flushright}
-
-\vspace{2cm}
-
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un equipo capaz de proveer agua con características adecuadas para análisis médicos, y tendrá un presupuesto preliminar estimado de 684 h de trabajo y \$ 1353600 de costo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
-
-Se adjunta a esta acta la planificación inicial.
-
-\vfill
-
-% Esta parte se construye sola con la información que hayan cargado en el preámbulo del documento y no debe modificarla
-\begin{table}[ht]
-\centering
-\begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
-%\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
-%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
-\end{tabular}
-\end{table}
-
-
-\pagebreak
-
-\section{1. Descripción técnica-conceptual del proyecto a realizar}
-\label{sec:descripcion}
-
-Aquellas tareas que deben ser realizadas en ambientes protegidos de la contaminación natural como lo son las salas limpias y los laboratorios, deben tener garantizado un estado continuo y controlado de muchos parámetros clave ambientales y de procesos. En las tareas de bioquímica, más específicamente el análisis de muestras de sangre, es necesaria la garantía de provisión continua de agua tipo I y/o II cuyas características se detallan en el cuadro \ref{tab:aguaTipoII}.
-
-\begin{table}[ht]
-\begin{tabularx}{\linewidth}{@{}|l|X|X|X|l|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-Parámetro          												&Tipo I 	&Tipo II 	&Tipo III  	&Tipo IV 	\\ \hline
-Conductividad eléctrica máx. [$\mu$S/cm @ 25 \textcelsius)    	&0,056 		&1,0 		&4,0 		&5,0		\\ \hline
-Resistividad eléctrica mín. (M$\Omega$ cm @ 25 \textcelsius)	&18,2 		&1,0		&0,25 		&0,2		\\ \hline
-PH a 25 \textcelsius											&-			&- 			&-			&5,0 - 8,0	\\ \hline
-TOC máx. ($\mu$g/l)												&10			&50 		&200		&Sin límite	\\ \hline
-Sodio máx. ($\mu$g/l)											&1			&5 			&10			&50			\\ \hline
-Sílice máx. ($\mu$g/l)											&3			&3 			&500		&Sin límite	\\ \hline
-Cloro máx. ($\mu$g/l)											&1			&5 			&10			&50			\\ \hline
-\end{tabularx}
-
-\caption{\centering Especificaciones sobre los tipos de agua según ASTM D1193-91 (\textit{American Society for Testing and Materials}).}
-\label{tab:aguaTipoII}
-\end{table}
-
-Los equipos analizados disponibles en el mercado son dispositivos que contienen módulos para filtrado (carbón activado, filtros de partículas, cartuchos de ósmosis inversa) de gran tamaño para garantizar una vida útil funcional aceptable antes del reemplazo recomendado. También, ciertos parámetros que pueden verse alterados por la finalización del correcto funcionamiento de dichos módulos, en muchos casos, deben ser monitoreados y medidos de forma manual con cierta regularidad para detectar la necesidad de mantenimiento y/o cambio.
-
-El actual desarrollo, además de cumplir con la pauta principal que es la erogación del agua definida, incorporará el control continuo del estado del sistema:
-\begin{itemize}
-	\item Control de vida útil de módulos.
-	\item Protección del sistema mediante medición de presiones.
-	\item Detección e informe de fallas de cada etapa.
-	\item Resguardo de información para análisis posteriores.
-\end{itemize}
-
-La principal ventaja de un control continuo y reportado es la posibilidad de realizar mantenimientos preventivos. La disponibilidad de información sobre el estado del sistema permite evitar que ciertos desvíos decanten en fallas críticas. 
-También, las alertas sobre la vida útil de los distintos módulos de filtrado permiten adelantarse al recambio de estos módulos y vuelve más eficiente el esquema de mantenimiento. Este esquema de análisis y reportes posibilita el uso de módulos de menor tamaño y, por lo tanto, el equipo se vuelve más pequeño y cómodo para ser manipulado.
-
-
-Como segunda parte del proyecto (no incluida en este plan) se encuentra el objetivo de incorporar los equipos a una red de IoT (\textit{Internet of Things}) para el monitoreo del universo de equipos por parte del proveedor y permitiéndole elaborar esquemas de servicio técnico preventivo.
-
-Se muestra, a continuación, un diagrama en bloques de la solución propuesta (figura \ref{fig:microcontroladorConexiones}):
-
-\begin{figure}[htpb]
+\subsection{Perspectiva del producto}
+El software debe ser capaz de tomar mediciones y actuar en distintos periféricos incorporados en el equipo de filtrado (figura \ref{fig:microcontroladorConexiones}).
+\begin{figure}[!htb]
 \centering 
 \includegraphics[width=.7\textwidth]{./Figuras/Microcontrolador y sus perifericos.png}
 \caption{Microcontrolador y sus periféricos.}
 \label{fig:microcontroladorConexiones}
 \end{figure}
 
-\vspace{25px}
+El software se integrará a un sistema diagramado con diferentes etapas (figura \ref{fig:esquemaSistema}).
 
-El núcleo lógico del sistema será un módulo ESP32 con FreeRTOS (\textit{Free Real Time Operating System}) como sistema operativo. El microcontrolador será el encargado de leer las diferentes variables, analizarlas y actuar, como así también, deberá realizar tareas de almacenamiento de información y de comunicación con el usuario (teclado y display).
-Mediante la lectura de periféricos se analizarán variables para diferentes funciones:
-\begin{itemize}
-	\item Presión
-	\begin{itemize}
-		\item Detección de obstrucciones.
-		\item Detección de fluido a la entrada.
-		\item Análisis del estado de filtros.
-	\end{itemize}
-	\item Caudal	
-	\begin{itemize}
-		\item Detección de obstrucciones.
-		\item Medición de agua erogada.
-		\item Análisis del estado de filtros.
-	\end{itemize}
-	\item Conductividad
-	\begin{itemize}
-		\item Medición de estado del agua filtrada.
-	\end{itemize}
-	\item Peso
-	\begin{itemize}
-		\item Medición del estado de llenado del reservorio.
-	\end{itemize}
-\end{itemize}
+\begin{enumerate}
+	\item Etapa de entrada:
+		\begin{itemize}
+			\item Ingreso de agua al sistema.
+		\end{itemize}
+	\item Etapa de flush:
+		\begin{itemize}
+			\item Eliminación del descarte de los bloques de ósmosis.
+		\end{itemize}
+	\item Etapa de llenado:
+		\begin{itemize}
+			\item Llenado de reservorio de agua.
+		\end{itemize}
+	\item Lazo de filtrado:
+		\begin{itemize}
+			\item Re-circulación para el filtrado.
+		\end{itemize}
+	\item Etapa de salida:
+		\begin{itemize}
+			\item Erogación del agua al usuario final.
+			\item Erogación del agua a segundo sistema conectado.
+		\end{itemize}
 
-Las salidas del sistema sobre los cuales se actuará serán bombas, electro-válvulas y una lámpara UV (eliminación de agentes biológicos) para diferentes etapas:
-\begin{itemize}
-	\item Ingreso de agua al equipo.
-	\item Eliminación del descarte de las ósmosis.
-	\item Llenado de reservorio.
-	\item Re-circulación para el filtrado.
-	\item Erogación de agua.
-\end{itemize}
+\end{enumerate}
 
-El sistema completo, conformado por los bloques de la figura \ref{fig:microcontroladorConexiones} y el conexionado con los demás módulos, se detalla en la figura \ref{fig:equipoEsquemaFisico}.
 
-\vspace{25px}
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/Esquema de equipo_vert.png}
-\caption{Esquema del equipo de filtrado.}
-\label{fig:equipoEsquemaFisico}
+\includegraphics[width=.7\textwidth]{./Figuras/Esquema de equipo_vert.png}
+\caption{Esquema del sistema de filtrado.}
+\label{fig:esquemaSistema}
 \end{figure}
 
-\vspace{25px}
 \newpage
-\section{2. Identificación y análisis de los interesados}
-\label{sec:interesados}
 
-\begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido 		& Organización 		& Puesto 			\\ \hline
-Cliente       & \clientename 			&\empclientename 	& Gerente 			\\ \hline
-Responsable   & \authorname 			& FIUBA        		& Alumno 			\\ \hline
-Orientador    & \supname 				& \pertesupname 	& Director 			\\ \hline
-Equipo        & José Alejandro Tántera 	& GA.MA ITALY 		& Desarrollador de hardware    	\\ \hline
-Usuario final & Laboratorios de análisis clínicos           &       -       	&      -  	\\ \hline
-\end{tabularx}
-\end{table}
-
-\section{3. Propósito del proyecto}
-\label{sec:proposito}
-
-El propósito de este proyecto es garantizar la provisión de agua filtrada a laboratorios de análisis clínicos para, principalmente, la tarea de disolución de sangre. El sistema deberá ser capaz de suministrar agua a usuarios, mediante la solicitud a través de la interfaz correspondiente, y a un segundo sistema que se encontrará conectado a una salida dedicada.
-
-A su vez, tiene el propósito de ser el primer proyecto del equipo de desarrollos electrónicos que se formará entre las personas que aquí participan como director, colaborador y alumno.
-
-\section{4. Alcance del proyecto}
-\label{sec:alcance}
-
-Se encuentra dentro del alcance del proyecto el desarrollo del firmware que implementará la lógica del sistema, el sensado de variables externas y la actuación sobre los dispositivos de salida. Como así también el prototipo de hardware del sistema embebido. 
-El sistema embebido resultante del presente desarrollo será incorporado al equipo para realizar las pruebas de campo junto a las conexiones, los filtros, el reservorio, etc.
-
-No se encuentra comprendido dentro del alcance del trabajo el diseño y la construcción de la estructura del equipo, el conexionado entre cada elemento y la selección de los filtros de partículas, lámpara UV y demás dispositivos externos.
-El proyecto no incluye pruebas ni habilitaciones en institutos o entes de regulación.
-
-
-\section{5. Supuestos del proyecto}
-\label{sec:supuestos}
-
-Para el desarrollo en tiempo y forma del presente proyecto se supone que:
-\begin{itemize}
-	\item El cliente no interrumpirá el proyecto.
-	\item Todos los módulos que comprenden el proyecto pueden ser adquiridos.
-	\begin{itemize}
-		\item Microcontrolador ESP32.
-		\item Expansor de GPIO (MCP23008 o MCP23017).
-		\item Celda de carga y módulo HX711.
-	\end{itemize}
-	\item La fabricación del hardware no se verá demorada por factores externos al proyecto y al equipo de desarrollo.
-	\item Los desarrolladores (alumno y colaborador) cuentan con la disponibilidad de 12 horas por semana.
-	\item Se cuenta con la documentación necesaria sobre los dispositivos utilizados.
-	\item La estructura y el conexionado del equipo estarán listos para realizar la prueba de campo.
-\end{itemize}
-
-\section{6. Requerimientos}
-\label{sec:requerimientos}
-
+\subsection{Funciones del producto}
 \begin{enumerate}
-	\item Requerimientos funcionales
-		\begin{enumerate}
-			\item Deben garantizarse las propiedades de agua tipo II a la salida.
-			\item El usuario debe poder solicitar la erogación.
-			\item El sistema debe proveer agua a un segundo equipo automáticamente.
-			\item Debe detectarse cuándo el segundo equipo debe ser provisto.
-			\item El ingreso de agua al sistema, el llenado del reservorio y el filtrado deben ser automáticos.
-			\item Deben ser detectadas obstrucciones en filtros.
-			\item Debe analizarse la vida útil de los filtros.
-			\item Debe almacenarse información para posteriores análisis.
-		\end{enumerate}
-	\item Requerimientos de metodología de trabajo
-		\begin{enumerate}
-			\item Control de versiones mediante GIT.
-			\item Aplicación de reglas de programación MISRA C.
-			\item Esquemáticos del hardware desarrollados en Altium.
-		\end{enumerate}
-	\item Requerimientos de documentación
-		\begin{enumerate}
-			\item Debe generarse y entregarse un manual de usuario con información sobre el uso del equipo y su alcance funcional.
-			\item Debe generarse y entregarse documentación de carácter técnico.
-			\begin{itemize}
-				\item Valores que deben ser entregados por el equipo (tabla \ref{tab:aguaTipoII}).
-				\item Máquina de estados del sistema.
-				\item Formato de los datos almacenados en memoria SD.
-				\item Módulos que componen el sistema (marca, serie).
-			\end{itemize}
-		\end{enumerate}
-\end{enumerate}
-
-\section{7. Historias de usuarios (\textit{Product backlog})}
-\label{sec:backlog}
-
-Cada historia de usuario descripta en esta sección partirá desde requerimientos que cumplen necesidades del clientes (quién fabricará los equipos) y de los usuarios finales (personal de laboratorios principalmente).\\
-El grado de importancia, dificultad y complejidad de cada ítem será finalmente representado con valor propios de la serie de fibonacci.
-
-\begin{itemize}
-\item Historia de usuario 1
-\\El usuario requiere de un sistema que utilice la red de agua corriente como fuente de alimentación.
-	\begin{itemize}
-		\item Dificultad: baja (1)
-		\\Implica el análisis de la presión a la entrada del equipo.
-		\item Complejidad: baja (1)
-		\\Análisis de un solo sensor de presión.
-		\item Riesgo: medio (3)
-		\\Sin un correcto funcionamiento el sistema se desabastece.
-	\end{itemize}
-\textit{Story point:} 5\\
-\textit{Valor de fibonacci:} 5
-\item Valor de fistoria de usuario 2
-\\El usuario requiere de la disponibilidad constante de agua mediante un reservorio con contenido controlado.
-	\begin{itemize}
-		\item Dificultad: media (3)
-		\\Implica el análisis de sensores de presión, caudalímetros y celdas de carga. También, se debe gestionar la activación de bombas y electro-válvulas.
-		\item Complejidad: media (3)
-		\\La lógica debe analizar y comandar los periféricos para abastecer y mantener el contenido del tanque.
-		\item Riesgo: medio (3)
-		\\Sin un correcto funcionamiento el sistema se desabastece o el reservorio podría desbordarse.
-	\end{itemize}
-\textit{Story point:} 9\\
-\textit{Valor de fibonacci:} 8
-\item  Historia de usuario 3
-\\El usuario debe disponer de agua tipo II (ver tabla \ref{tab:aguaTipoII}).
-	\begin{itemize}
-		\item Dificultad: alta (5)
-		\\Medición de variables clave. 
-		\item Complejidad: : media (3)
-		\\Control del lazo de filtrado.
-		\item Riesgo: alto (5)
-		\\Es el bloque que debe garantizar la calidad del agua filtrada. Afecta a los procesos que requieren de agua tipo II.
-	\end{itemize}
-\textit{Story point:} 13\\
-\textit{Valor de fibonacci:} 13
-\item  Historia de usuario 4
-\\El usuario requiere la posibilidad de obtener agua a demanda.
-	\begin{itemize}
-		\item Dificultad: : media (3)
-		\\Dispensación de agua y control del caudal.
-		\item Complejidad: media (3)
-		\\Control del lazo de erogación y medición del agua erogada.
-		\item Riesgo: bajo (1)
-		\\El usuario puede corregir algún error en la cantidad de agua entregada.
-	\end{itemize}
-\textit{Story point:} 7\\
-\textit{Valor de fibonacci:} 8
-\item  Historia de usuario 5
-\\El usuario precisa que un segundo equipo sea provisto de agua por el sistema.
-	\begin{itemize}
-		\item Dificultad: baja (1)
-		\\Dispensación de agua sin control exacto de caudal.
-		\item Complejidad: media (3)
-		\\Detección de necesidad de erogación a través de una rutina de medición de caudal. Fin del proceso cuando el segundo sistema cierre su válvula de entrada.
-		\item Riesgo: alto (5)
-		\\El equipo provisto de agua puede quedar desabastecido y afectar los procesos dependientes de este.
-	\end{itemize}
-\textit{Story point:} 9\\
-\textit{Valor de fibonacci:} 8
-\item  Historia de usuario 6
-\\El cliente solicita que sean almacenados datos de forma periódica sobre el estado del sistema para disponer de información al momento de analizar y realizar un servicio técnico.
-	\begin{itemize}
-		\item Dificultad: baja (1)
-		\\Escritura de tarjeta de memoria SD.
-		\item Complejidad: media (3)
-		\\Requiere detectar datos clave y vincular los distintos módulos de software con el encargado del almacenamiento de información.
-		\item Riesgo: bajo (1)
-		\\No afecta directamente al equipo y a su funcionamiento en régimen permanente.
-	\end{itemize}
-\textit{Story point:} 5\\
-\textit{Valor de fibonacci:} 5
-
-\end{itemize}
-
-\section{8. Entregables principales del proyecto}
-\label{sec:entregables}
-
-Los entregables del proyecto son:
-
-\begin{itemize}
-	\item Firmware
-	\item Diagrama de circuitos esquemáticos
-	\item Prototipo (firmware y hardware) funcional.
-	\item Manual de uso
-	\item Informe final
-\end{itemize}
-
-\section{9. Desglose del trabajo en tareas}
-\label{sec:wbs}
-
-\begin{enumerate}
-\item Gestión del Proyecto 
-	\begin{enumerate}	
-	\item Definición de los requerimientos en conjunto con el cliente (8 h)
-	\item Definición inicial de la solución de hardware y software (16 h)
-	\item Planeamiento inicial (8 h)
-	\item Presentación de la propuesta al cliente (6 h)
-	\item Ajustes de requerimientos (8 h)
-	\item Documentación del alcance y planeamiento del proyecto (24 h)
-	\end{enumerate}
-\item Investigación
+	\item	El software aquí descripto brindará las siguientes funcionalidades.
 	\begin{enumerate}
-	\item Periféricos (32 h)
-		\begin{itemize}
-			\item Celda de carga
-			\item Caudalímetro
-			\item Sensor de presión
-			\item Conductímetro
-			\item Memoria SD
-			\item Display
-		\end{itemize}
-	\item Microcontrolador (16 h)
-	\item Componentes adicionales (32 h)
-		\begin{itemize}
-			\item Expansor de GPIO
-			\item Transistores
-			\item Driver para transistores
-			\item Otros
-		\end{itemize}
-	\item Fabricantes (4 h)
+		\item 	Control de bombas y electro-válvulas.
+		\item	Gestión del almacenamiento de agua.
+		\item	Control de la presión del sistema.
+		\item	Control de vida útil de filtros.
+		\item	Medición de conductividad.
+		\item	Medición de caudal.
+		\item	Medición de sólidos disueltos en agua.
+		\item	Erogación de agua.
+		\item	Almacenamiento de información de diagnóstico.
+		\item	Presentación de información e indicaciones sobre el estado sistema.
 	\end{enumerate}
-\item Desarrollo de hardware
+	\item	El software no brindará las siguientes funcionalidades.
 	\begin{enumerate}
-	\item Diseño de diagramas esquemáticos (40 h)
-	\item Diseño de PCB (32 h)
-	\item Fabricación de PCB (64 h)
-	\end{enumerate}
-\item Desarrollo de software
-	\begin{enumerate}
-	\item \textit{Device Drivers}
-		\begin{itemize}
-			\item Celda de carga HX711 (16 h)
-			\item Bomba (6 h)
-			\item Electro-válvula (4 h)
-			\item Lámpara UV (4 h)
-			\item Caudalímetro (16 h)
-			\item Sensor de presión (8 h)
-			\item Conductímetro (8 h)
-			\item Módulo SD (16 h)
-			\item Display (32 h)
-			\item Teclado (16 h)
-		\end{itemize}
-	\item Diseño de la MEF (Máquina de Estados Finitos) (8 h)
-	\item Programación de tareas de \textit{FreeRTOS} (24 h)
-	\item Programación de la MEF (24 h)
-	\end{enumerate}
-\item Prueba y verificación
-	\begin{enumerate}
-		\item Planificación (16 h)
-		\item \textit{Device Drivers} (24 h)
-		\item Lógica del sistema (8 h)
-		\item Sistema integrado (40 h)
-		\item Modificaciones (40 h)
-	\end{enumerate}
-\item Documentación
-	\begin{enumerate}
-		\item Elaboración del manual de uso (24 h)
-		\item Elaboración del informe final (60 h)
+		\item	Medición de PH, TOC, sodio, sílice, cloro.
+		\item	Integración a sistema IoT.
+		\item	Conexión WiFi o Bluetooth.
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 684 h.
-
-\section{10. Diagrama de Activity On Node}
-\label{sec:AoN}
-
-Se detallan, en la figura \ref{fig:AoN}, los bloques correspondientes al diagrama de \textit{Activity On Node}. Se utilizan los tiempos en horas de las tareas definidas en el desglose del trabajo (sección \ref{sec:wbs}).\\
-Se estima que la fabricación del PCB llevará un mes y medio. A un supuesto ya definido de 12 h semanales, se proyecta, entonces, al bloque \textit{"Fabricación de HW"} con un equivalente de 64 h, es decir, 6 semanas. A esta rama, que contiene dicho bloque con tiempo variable dependiente del fabricante, se la etiqueta como camino semicrítico.
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=1\textwidth]{./Figuras/Activity On Node.png}
-\caption{Diagrama en \textit{Activity on Node}.}
-\label{fig:AoN}
-\end{figure}
-
-\vspace{25px}
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\section{11. Diagrama de Gantt}
-\label{sec:gantt}
-
-Se muestra a continuación, en las figuras \ref{fig:WBS_Planner} y \ref{fig:diagGantt}, el desglose de tareas y el diagrama de gantt respectivamente.\\
-Se definió una semana de 6 (seis) días laborables de 2 (dos) horas cada uno para cumplir con la disponibilidad supuesta en la sección \ref{sec:supuestos} de 12 (doce) horas por semana.
-
-\vspace{25px}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/WBS.png}
-\caption{Estructura de Descomposición del Trabajo (\textit{Work Breakdown Structure}).}
-\label{fig:WBS_Planner}
-\end{figure}
-
-\vspace{25px}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=1\textwidth]{./Figuras/GANT_sin_detalle.png}
-\caption{Diagrama de gantt del proyecto.}
-\label{fig:diagGantt}
-\end{figure}
-
-\vspace{25px}
-
-
-\section{12. Presupuesto detallado del proyecto}
-\label{sec:presupuesto}
-Se presenta, en el cuadro \ref{tab:costos}, el listado de costos principales del proyecto expresados en pesos argentinos. No se tienen en cuenta, en este análisis de costos, los sensores y actuadores que ya han sido provistos por el cliente.
-
-
-\begin{table}[htpb]
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\hline
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} \hline
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-  
- Planificación e investigación & 
-  \multicolumn{1}{c|}{154 h} & 
-  \multicolumn{1}{c|}{\$ 500} &
-  \multicolumn{1}{c|}{\$ 77000} \\ \hline
-  
- Pruebas y documentación & 
-  \multicolumn{1}{c|}{212 h} & 
-  \multicolumn{1}{c|}{\$ 1000} &
-  \multicolumn{1}{c|}{\$ 212000} \\ \hline
-  
- Desarrollo de software & 
-  \multicolumn{1}{c|}{91 h} & 
-  \multicolumn{1}{c|}{\$ 3000} &
-  \multicolumn{1}{c|}{\$ 273000} \\ \hline
-  
- Desarrollo de hardware &
-  \multicolumn{1}{c|}{72 h} &
-  \multicolumn{1}{c|}{\$ 3000} &
-  \multicolumn{1}{c|}{\$ 216000} \\ \hline
-  
- Kit de desarrollo ESP32 &
-  \multicolumn{1}{c|}{ 2 u} &
-  \multicolumn{1}{c|}{ \$ 4000 } &
-  \multicolumn{1}{c|}{\$ 8000} \\ \hline
-  
- Fabricación de hardware &
-  \multicolumn{1}{c|}{5 u} &
-  \multicolumn{1}{c|}{\$ 10000} &
-  \multicolumn{1}{c|}{\$ 50000} \\ \hline
-  
- Otros componentes &
-  \multicolumn{1}{c|}{ 1 } &
-  \multicolumn{1}{c|}{\$ 10000} &
-  \multicolumn{1}{c|}{\$ 10000}  \\ \hline
-   
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$ 846000} \\ \hline
-  
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-  
- 60 \% del costo directo &
-  \multicolumn{1}{c|}{ 1 } &
-  \multicolumn{1}{c|}{\$ 507600} &
-  \multicolumn{1}{c|}{\$ 507600}  \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \$ 507600  \\ \hline
-\rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \$ 1353600   \\ \hline
-\end{tabularx}
-\caption{Definición de costos del proyecto.}
-\label{tab:costos}
-\end{table}
-
-
-\section{13. Gestión de riesgos}
-\label{sec:riesgos}
-
-a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: Errores críticos en el diseño del \textit{hardware}.
-\begin{itemize}
-	\item Severidad (S): 10\\
-	Provocaría una fabricación de un sistema con fallas y mal funcionamientos, tal vez, insalvables. 
-	\item Probabilidad de ocurrencia (O): 5\\
-	El desarrollador cuenta con los conocimientos necesarios pero la cantidad de periféricos genera la probabilidad de errores.
-\end{itemize}   
 
-Riesgo 2: Daños en placa prototipo debido a modificaciones.
+\section{3. Estrategias generales}
+\label{sec:estrategias_generales}
+\subsection{Características de calidad}
+Se realiza, a continuación, la selección de las características y subcaracterísticas de calidad seleccionadas:
+
 \begin{itemize}
-	\item Severidad (S): 10\\
-	Afectaría pruebas y validaciones de funcionamiento del sistema.
-	\item Ocurrencia (O): 6\\
-	Si se producen cambios de requerimientos del proyecto o modificaciones necesarias de \textit{hardware}, puede dañarse el prototipo al intervenirlo.
+	\item \textbf{Funcionabilidad - Precisión (accurateness):} el software debe garantizar la precisión de las mediciones para lograr un correcto control de la máquina de estados que gobierna el sistema y, por lo tanto, garantizar su correcto funcionamiento. La precisión deberá cumplirse para que el resultado final sea el esperado.
+	\item \textbf{Funcionabilidad - Interoperabilidad (interoperability):} el software debe tener la capacidad de detectar la necesidad de un segundo sistema de ser provisto por agua y ejecutar el proceso correspondiente para cumplir con dicha necesidad.
+	\item \textbf{Utilidad - Operabilidad (operability):}  la interfaz con el usuario debe ser simple y clara para la interacción usuario-software y debe brindar información importante sobre el estado del uso del sistema.
+	\item \textbf{Mantenibilidad - Analizabilidad (analyzability):} el software debe señalizar mediante salidas (leds) los estados del sistema y almacenar datos que permitan el análisis del funcionamiento actual e histórico del sistema.
+	
 \end{itemize}
+\subsection{Importancia relativa de las características de calidad}
+Se definen, en el cuadro siguiente, las características de calidad para la estrategia general de testing y su importancia relativa. 
 
-Riesgo 3: Falta de disponibilidad de componentes.
-\begin{itemize}
-	\item Severidad (S): 8\\
-	Provocaría la imposibilidad de utilizar ciertos módulos diseñados.
-	\item Ocurrencia (O): 8\\
-	Es un riesgo que tiene una ocurrencia frecuente debido a las dificultades que presenta la coyuntura mundial actual.
-\end{itemize}
-
-Riesgo 4: Ausencia de documentación de sensores.
-\begin{itemize}
-	\item Severidad (S): 8\\
-	Alta severidad debido a que afectaría el cumplimiento de requerimientos y al normal trabajo de desarrollo. Se volvería necesario analizar el alcance y el funcionamiento de dichos elementos.
-	\item Ocurrencia (O): 5\\
-	Existe gran cantidad de componentes de fabricación masiva con documentación escasa o inexistente.
-\end{itemize}
-
-Riesgo 5: Incumplimiento de alcances por el microcontrolador seleccionado.
-\begin{itemize}
-	\item Severidad (S): 10\\
-	Implicaría un cambio del \textit{core} del sistema.
-	\item Ocurrencia (O): 4\\
-	Se realiza un análisis para la selección del microcontrolador que disminuye la probabilidad de ocurrencia.
-\end{itemize}
-
-Riesgo 6: Fallas en el funcionamiento de \textit{device drivers}.
-\begin{itemize}
-	\item Severidad (S): 8\\
-		Provocaría la imposibilidad de utilizar ciertos módulos diseñados.
-	\item Ocurrencia (O): 6\\
-	La variedad y cantidad de dispositivos para los cuales es necesario desarrollar un \textit{device driver} aumenta la probabilidad de ocurrencia de fallas.
-\end{itemize}
-
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-
-\begin{table}[htpb]
+\begin{table}[H]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+\begin{tabular}{|l|c|c|}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-Errores críticos en el diseño del \textit{hardware} 			& 10   	& 5  	& 50    & 10   	& 2 & 20    \\ \hline
-Daños en placa prototipo debido a modificaciones 				& 10	& 4		& 40	& 4		& 4	& 16 	\\ \hline
-Falta de disponibilidad de componentes 							& 8    	& 8  	& 64    & 6   	& 8 & 48    \\ \hline
-Ausencia de documentación de sensores  							& 8   	& 5  	& 40    & 6  	& 5 & 30    \\ \hline
-Incumplimiento de alcances por el microcontrolador seleccionado & 10  	& 4  	& 40 	& 7   	& 4 & 28    \\ \hline
-Fallas en el funcionamiento de \textit{device drivers}       	& 8		& 6  	& 48    & 6  	& 4	& 24    \\ \hline
-
-\end{tabularx}%
+\rowcolor[HTML]{C0C0C0}
+Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 60\%	\\\cline{2-3}
+  										& Interoperabilidad 	& 5\%							\\ \hline
+Utilidad					& Operatividad						& 15\%						\\ \hline
+Mantenibilidad				& Analizabilidad					& 20\%						\\ \hline
+\end{tabular}
+\caption{\centering Características de calidad del proyecto.}
+\label{tab:caracteristicasDeCalidad}
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 40 puntos.
+\subsection{Características de calidad de niveles de prueba}
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+									& Precisión	& Interoperabilidad		& Operabilidad 	& Analizabilidad	\\ \hline
+Importancia relativa				& 60 \%		& 5\%					& 15 \% 		& 20\%				\\ \hline
+Unit test							& + 		&  						&  		 		& 					\\ \hline
+Sotware integration test			&  			&  						&  		 		& +					\\ \hline
+Hardware/software integration test	& + 		&  						&  		 		& +					\\ \hline
+System test							& ++ 		& + 					& + 		 	& ++				\\ \hline
+Acceptance test						& ++ 		& + 					& ++ 		 	& 					\\ \hline
+Field test							& ++ 		& ++ 					& ++ 		 	& ++				\\ \hline
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: Tanto el director como el desarrollador de \textit{software} validarán el diseño del \textit{hardware} mediante la utilización de las hojas de datos correspondientes.
+\end{tabular}
+\caption{\centering Características de niveles de prueba.}
+\label{tab:caracteristicasDeCalidadDeNivelesDePrueba}
+\end{table}
+
+Referencias:\\ \\
+\begin{tabular}{l@{\hspace{2cm}}l}
+\textbf{++} & La característica de calidad se cubrirá y es un objetivo principal. \\
+\textbf{+} & La característica de calidad se cubrirá en este nivel de prueba. \\
+\textbf{(vacío)} & La característica de calidad no es un problema en este nivel de prueba. \\
+\end{tabular}
+
+\section{4. Estrategias por nivel de prueba}
+\label{sec:estrategias_nivel_de_prueba}
+\subsection{Características de calidad por nivel de prueba}
+
 \begin{itemize}
-	\item Severidad (S): 10 \\
-		Se mantiene la severidad establecida.
-	\item Ocurrencia (O): 2 \\
-	La verificación del diseño por parte de otros ingenieros disminuye considerablemente la probabilidad de ocurrencia.
-\end{itemize}
-
-Riesgo 2: Fabricación de 5 (cinco) PCB por cada tirada de producción.
-\begin{itemize}
-	\item Severidad (S): 4\\
-	Se cuenta con placas de respaldo para disminuir la severidad.
-	\item Ocurrencia (O): 4\\
-	Se mantiene la misma probabilidad de ocurrencia debido a que no se analizan y modifican los procesos de \textit{testing}.
-\end{itemize}
-
-Riesgo 3: Búsqueda de opciones a componentes en falta.
-\begin{itemize}
-	\item Severidad (S): 6\\
-	Disminuye el impacto debido a la existencia de opciones para el reemplazo.
-	\item Ocurrencia (O): 8\\
-	La ocurrencia se mantiene dependiendo del contexto de los mercados y regulaciones.
+	\item Unit test	
 	
-\end{itemize}
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		 Funcionabilidad 			& Precisión 		& 80\%	\\ \hline
+		Mantenibilidad				& Analizabilidad					& 20\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
 
-Riesgo 4: Búsqueda de opciones para cambiar los sensores seleccionados por el cliente.
-\begin{itemize}
-	\item Severidad (S): 6\\
-	El impacto sobre el proyecto disminuye para el equipo de desarrollo ya que se le otorga flexibilidad sobre la selección de periféricos.
-	\item Ocurrencia (O): 5\\
-	Permanece la probabilidad de ocurrencia.
+	\item Sotware integration test
 	
-\end{itemize}
-
-Riesgo 5: Programación modular y en capaz para minimizar el tiempo de migración en el caso de cambiar de plataforma.
-\begin{itemize}
-	\item Severidad (S): 7\\
-	La severidad disminuye debido a buenas prácticas que facilitan cambios de \textit{hardware}. 
-	\item Ocurrencia (O): 4\\
-	Se mantiene la probabilidad de ocurrencia.
-\end{itemize}
-
-Riesgo 6: Programación modular y respetando reglas del documento de MISRA C.
-\begin{itemize}
-	\item Severidad (S): 6\\
-	Baja el grado de impacto como consecuencia de la utilización de buenas prácticas de programación.
-	\item Ocurrencia (O): 4\\
-	Se vuelve menos probable la aparición del riesgo debido al ordenamiento sobre el desarrollo.
 	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 25\%	\\\cline{2-3}
+		  										& Interoperabilidad 	& 5\%							\\ \hline
+		Utilidad					& Operatividad						& 10\%						\\ \hline
+		Mantenibilidad				& Analizabilidad					& 60\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
+
+	\item Hardware/software integration test
+	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 35\%	\\\cline{2-3}
+		  										& Interoperabilidad 	& 5\%							\\ \hline
+		Utilidad					& Operatividad						& 20\%						\\ \hline
+		Mantenibilidad				& Analizabilidad					& 40\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
+
+	\item System test
+	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 35\%	\\\cline{2-3}
+		  										& Interoperabilidad 	& 10\%							\\ \hline
+		Utilidad					& Operatividad						& 15\%						\\ \hline
+		Mantenibilidad				& Analizabilidad					& 40\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
+
+	\item Acceptance test
+	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 30\%	\\\cline{2-3}
+		  										& Interoperabilidad 	& 10\%							\\ \hline
+		Utilidad					& Operatividad						& 30\%						\\ \hline
+		Mantenibilidad				& Analizabilidad					& 30\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
+
+	\item Field test
+	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Característica de calidad	& Subcaracterística		& Importancia relativa\\ \hline
+		\multirow{2}{*}{Funcionabilidad} 			& Precisión 		& 35\%	\\\cline{2-3}
+		  										& Interoperabilidad 	& 5\%							\\ \hline
+		Utilidad					& Operatividad						& 40\%						\\ \hline
+		Mantenibilidad				& Analizabilidad					& 20\%						\\ \hline
+		\end{tabular}
+		\label{tab:caracteristicasDeCalidad}
+		\end{table}
+
 \end{itemize}
 
-\section{14. Gestión de la calidad}
-\label{sec:calidad}
+\subsection{División del sistema en subsistemas}
+Se definen, para el \ttitle, los siguientes subsistemas.
+\begin{enumerate}
+        \item \textbf{Subsistema A: Subsistema de adquisición}\\
+        Adquisición de datos provenientes de sensores, pulsadores y datos internos(caudal, conductividad, presión, volumen en reservorio, pulsadores, tiempo de funcionamiento).
+        \item \textbf{Subsistema B: Subsistema de análisis y control}\\
+        Análisis de los datos adquiridos por el subsistema de adquisición y determinación de estado siguiente del sistema.
+        \item \textbf{Subsistema C: Subsistema de actuación}\\
+        Actuación sobre bombas, lámpara UV, electro-válvulas en base al estado del sistema definido por el subsistema de análisis y control.
+        \item \textbf{Subsistema D: Subsistema de almacenamiento de datos}\\
+        Almacenamiento en memoria SD de los datos recibidos del subsistema de análisis y control.
+        \item \textbf{Subsistema E: Subsistema de display}\\
+        Informe de estado del sistema y mensajes hacia el usuario.
+\end{enumerate}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\subsection{Importancia relativa de los subsistemas}
 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Subsistema 							& Importancia relativa\\ \hline
+Subsistema de adquisición								& 25\%						\\ \hline
+Subsistema de análisis y control						& 25\%						\\ \hline
+Subsistema de actuación									& 25\%						\\ \hline
+Subsistema de almacenamiento de datos					& 10\%						\\ \hline
+Subsistema de display									& 15\%						\\ \hline
+\end{tabular}
+\caption{\centering Subsistemas y su importancia relativa.}
+\label{tab:subsistemas_importancia}
+\end{table}
+
+\subsection{Determinación de la importancia de test por combinaciones de subsistema y características de calidad}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+& Sub. A & Sub. B & Sub. C & Sub. D & Sub. E    \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Importancia relativa					& 25\% & 25\% & 25\% & 10\% & 15\%						\\ \hline
+Precisión								& ++ & ++ 	& ++ 	& + 	& 					\\ \hline
+Interoperabilidad						&  + & + 	& + 	&  		& 						\\ \hline
+Operabilidad							&  + &+  	& + 		&  		& ++						\\ \hline
+Analizabilidad					 		& +  & + 	& + 	& ++ 	& ++				\\ \hline
+\end{tabular}
+\caption{\centering Características de calidad por subsistema.}
+\label{tab:subsistemas_importancia}
+\end{table}
+
+
+Referencias:\\ \\
+\begin{tabular}{l@{\hspace{2cm}}l}
+\textbf{++} & La característica de calidad se cubrirá y es un objetivo principal. \\
+\textbf{+} & La característica de calidad se cubrirá en este nivel de prueba. \\
+\textbf{(vacío)} & La característica de calidad no es un problema en este nivel de prueba. \\
+\end{tabular}
+
+\subsection{Técnicas de test a ser usadas}
+Se determinan las técnicas de test a usar sobre el software:
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item STT (State Transition Testing)\\
+	Test aplicable a la máquina de estados desarrollada con FreeRTOS.
+	\item CFT (Control Flow Testing)\\
+	Test aplicable a caminos determinados dentro del software desarrollados.
+	\item ECT (Elementary Comparison Testing)\\
+	Test aplicable a las mediciones obtenidas por los sensores y a las decisiones tomadas a partir de los valores medidos.
 \end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
-
-\section{15. Procesos de cierre}    
-\label{sec:cierre}
-
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
-\end{consigna}
-
-
 \end{document}
